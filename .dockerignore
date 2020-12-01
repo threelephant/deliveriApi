@@ -1,0 +1,8 @@
+target/
+.git/
+.idea/
+*.iml
+.DS_Store
+*.md
+!README.md
+.mvn/wrapper/maven-wrapper.jar

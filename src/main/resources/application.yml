@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: deliveri-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/deliveri
+    username: deliveri
+    password: deliveri
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  cache:
+    type: redis
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:your-256-bit-secret-key-change-in-production-must-be-at-least-256-bits}
+    expiration-ms: 86400000
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
